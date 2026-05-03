@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.tmp
+*.swp
+.DS_Store
+.vscode/
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+env/
+output/
+results/raw/
+results/temp/
+data/raw/
