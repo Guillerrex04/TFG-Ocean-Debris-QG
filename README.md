@@ -19,13 +19,34 @@ El trabajo combina:
 
 ## Estructura del repositorio
 
-- `src/`: código fuente principal.
-- `data/`: datos de entrada y auxiliares.
-- `figures/`: figuras generadas para la memoria.
-- `results/`: resultados numéricos y salidas de simulación.
-- `docs/`: documentación complementaria.
-- `notebooks/`: cuadernos de exploración y análisis.
-- `notes/`: apuntes internos, borradores y notas de trabajo.
+```text
+TFG-Ocean-Debris-QG/
+├── data/                        # Datos de entrada o conjuntos de datos auxiliares
+├── docs/                        # Documentación técnica y notas del proyecto
+├── figures/                     # Figuras seleccionadas para memoria o documentación
+├── notebooks/                   # Cuadernos de análisis y pruebas
+├── notes/                       # Apuntes de trabajo y planificación
+├── results/                     # Resultados generados por las simulaciones
+├── src/
+│   ├── simulacion_oceano_qg_v1/                 # Simulación oceánica cuasigeostrófica principal del TFG
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── diagnostics.py
+│   │   ├── grid.py
+│   │   ├── main.py
+│   │   ├── main_quick.py
+│   │   ├── operators.py
+│   │   ├── particles.py
+│   │   ├── plotting.py
+│   │   ├── poisson.py
+│   │   └── qg_model.py
+│   └── animacion_conservacion_pv_columna/      # Experimento visual sobre conservación de PV en columna
+│       ├── __init__.py
+│       └── animacion_columnas_modificado.py
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
 ## Requisitos
 
