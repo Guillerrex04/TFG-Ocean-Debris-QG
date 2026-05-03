@@ -4,22 +4,73 @@ Repositorio del Trabajo Fin de Grado de Ingeniería Aeroespacial sobre modelizac
 
 ## Objetivo
 
-Desarrollar una herramienta numérica en Python para simular una circulación oceánica idealizada y la dispersión lagrangiana de restos flotantes.
+Desarrollar una herramienta numérica en Python para simular una circulación oceánica idealizada y estudiar la dispersión lagrangiana de restos flotantes en un entorno geofísico simplificado.
 
-## Contenido del repositorio
+## Alcance del proyecto
 
-- `src/`: código fuente.
-- `data/`: datos de entrada.
-- `figures/`: figuras para la memoria.
-- `results/`: resultados de simulación.
+El trabajo combina:
+
+- teoría de dinámica de fluidos geofísicos,
+- aproximación cuasigeostrófica,
+- ecuaciones de aguas someras,
+- vorticidad potencial,
+- transporte lagrangiano de partículas,
+- análisis de resultados numéricos.
+
+## Estructura del repositorio
+
+- `src/`: código fuente principal.
+- `data/`: datos de entrada y auxiliares.
+- `figures/`: figuras generadas para la memoria.
+- `results/`: resultados numéricos y salidas de simulación.
 - `docs/`: documentación complementaria.
-- `notebooks/`: cuadernos de exploración.
-- `notes/`: notas de trabajo.
+- `notebooks/`: cuadernos de exploración y análisis.
+- `notes/`: apuntes internos, borradores y notas de trabajo.
 
 ## Requisitos
 
-Instalar las dependencias indicadas en `requirements.txt`.
+Instala las dependencias de Python con:
 
-## Estado
+```bash
+pip install -r requirements.txt
+```
 
-Estructura inicial del proyecto.
+## Dependencias principales
+
+- numpy
+- scipy
+- matplotlib
+- pandas
+- xarray
+- netCDF4
+
+## Estado actual
+
+Estructura inicial del repositorio preparada para el desarrollo del TFG.
+
+## Reproducibilidad
+
+El proyecto está pensado para ser reproducible:
+
+- el código principal vivirá en `src/`,
+- los resultados se guardarán en `results/`,
+- las figuras finales se exportarán a `figures/`,
+- la documentación del proceso se mantendrá en `docs/` y `notes/`.
+
+## Uso previsto
+
+En fases posteriores del proyecto se incluirán:
+
+- scripts de simulación,
+- generación de partículas,
+- análisis de trayectorias,
+- visualización de resultados,
+- documentación técnica de cada experimento.
+
+## Licencia
+
+Este repositorio incluye un archivo `LICENSE` en la raíz del proyecto.
+
+## Autor
+
+Guillermo Alba Buitrón
