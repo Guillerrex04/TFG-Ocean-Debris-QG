@@ -15,3 +15,9 @@ output/
 results/raw/
 results/temp/
 data/raw/
+__pycache__/
+*.pyc
+*.pyo
+output/
+*.npz
+*.mp4
