@@ -13,7 +13,5 @@ dependencies = [
     "netCDF4",
 ]
 
-[project.scripts]
-main = "main:main"
-post_process = "post_process:post_process"
-test_numerical = "test_numerical:main"
+[tool.uv]
+package = false
