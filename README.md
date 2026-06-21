@@ -95,3 +95,15 @@ Valida el solucionador de Poisson y los operadores de velocidad.
 - `numba` — compilación JIT de advección de partículas
 - `netCDF4` — almacenamiento de trayectorias
 - `tqdm` — barras de progreso
+
+## Resultados precomputados
+
+Los outputs completos (vídeos, snapshots PNG, gráficas métricas, trayectorias NetCDF,
+resúmenes NPZ) están disponibles como asset de la release:
+
+[**output_data.zip**](https://github.com/Guillerrex04/TFG-Ocean-Debris-QG/releases/download/v4.6-final/output_data.zip)
+(~545 MB)
+
+Los snapshots de campos cada 0.5 días (~6000 archivos NPZ) no están incluidos por
+limitaciones de tamaño, pero pueden regenerarse ejecutando `uv run python main.py`
+seguido de `uv run python post_process.py`.
