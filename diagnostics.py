@@ -1,8 +1,53 @@
 import numpy as np
 
+
+def search_area(positions: np.ndarray) -> float:
+    """Área de la envolvente convexa (ConvexHull) de la nube en m²."""
+    from scipy.spatial import ConvexHull
+    hull = ConvexHull(positions)
+    return float(hull.volume)
+
+
 def kinetic_energy(u: np.ndarray, v: np.ndarray, dx: float, dy: float) -> float:
     """Energía cinética integrada en el dominio (J/kg en 2D por unidad de densidad)."""
     return 0.5 * np.sum(u**2 + v**2) * dx * dy
+
+
+def enstrophy_integrated(zeta: np.ndarray, dx: float, dy: float) -> float:
+    """Enstrofía integrada: 0.5 * sum(zeta^2) * dx * dy."""
+    return 0.5 * np.sum(zeta**2) * dx * dy
+
+
+def enstrophy_rms(zeta: np.ndarray) -> float:
+    """RMS de vorticidad: sqrt(mean(zeta^2))."""
+    return np.sqrt(np.mean(zeta**2))
+
+
+def max_velocity_abs(u: np.ndarray, v: np.ndarray) -> float:
+    """Máximo del módulo de velocidad en el dominio."""
+    return float(np.max(np.sqrt(u**2 + v**2)))
+
+
+def enstrophy_timeseries(zeta_frames: list, dx: float, dy: float) -> np.ndarray:
+    """Evolución temporal de enstrofía integrada."""
+    ens = np.zeros(len(zeta_frames))
+    for i, zeta in enumerate(zeta_frames):
+        ens[i] = enstrophy_integrated(zeta, dx, dy)
+    return ens
+
+
+def diagnostic_summary(zeta: np.ndarray, u: np.ndarray, v: np.ndarray,
+                      dx: float, dy: float) -> dict:
+    """Resumen diagnóstico completo para una instantánea."""
+    return {
+        "kinetic_energy": kinetic_energy(u, v, dx, dy),
+        "enstrophy": enstrophy_integrated(zeta, dx, dy),
+        "zeta_rms": enstrophy_rms(zeta),
+        "u_max": float(np.max(np.abs(u))),
+        "v_max": float(np.max(np.abs(v))),
+        "vel_max": max_velocity_abs(u, v),
+    }
+
 
 def centroid(positions: np.ndarray) -> np.ndarray:
     """Calcula el centro de masas (x_medio, y_medio) de una nube (N, 2)."""

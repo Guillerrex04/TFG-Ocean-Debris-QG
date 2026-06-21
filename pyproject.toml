@@ -1,0 +1,19 @@
+[project]
+name = "tfg-ocean-debris-qg"
+version = "4.6"
+description = "Simulación QG barotrópica oceánica para dispersión de partículas (TFG)"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "cupy-cuda12x",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "numba",
+    "netCDF4",
+]
+
+[project.scripts]
+main = "main:main"
+post_process = "post_process:post_process"
+test_numerical = "test_numerical:main"
