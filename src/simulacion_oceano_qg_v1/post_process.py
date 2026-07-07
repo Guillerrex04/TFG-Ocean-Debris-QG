@@ -1021,7 +1021,10 @@ def post_process():
                                  save_path=os.path.join(metricas_dir, "wind_stress_profile_centered.svg"),
                                  centered=True)
         plot_wind_curl_profile(_p.ly, _p.tau0,
-                               save_path=os.path.join(metricas_dir, "wind_curl_profile.svg"))
+                                save_path=os.path.join(metricas_dir, "wind_curl_profile.svg"))
+        plot_wind_curl_profile(_p.ly, _p.tau0,
+                                save_path=os.path.join(metricas_dir, "wind_curl_profile_centered.svg"),
+                                centered=True)
         print("[OK] Perfiles de viento (SVG) generados en la carpeta output.")
 
     if RUN_VIDEOS:
@@ -1117,7 +1120,10 @@ def _run_comparison_post_process(output_dir, videos_dir, metricas_dir, nlist):
                                  save_path=os.path.join(metricas_dir, "wind_stress_profile_centered.svg"),
                                  centered=True)
         plot_wind_curl_profile(_p.ly, _p.tau0,
-                               save_path=os.path.join(metricas_dir, "wind_curl_profile.svg"))
+                                save_path=os.path.join(metricas_dir, "wind_curl_profile.svg"))
+        plot_wind_curl_profile(_p.ly, _p.tau0,
+                                save_path=os.path.join(metricas_dir, "wind_curl_profile_centered.svg"),
+                                centered=True)
         print("[OK]")
 
     if RUN_VIDEOS:

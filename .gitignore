@@ -4,3 +4,4 @@ __pycache__/
 output/
 codigo_completo*.txt
 .venv/
+*.zip

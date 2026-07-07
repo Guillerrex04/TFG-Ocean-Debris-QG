@@ -522,10 +522,10 @@ def plot_wind_stress_profile(ly, tau0, save_path=None, centered=False, swap_axes
         
         if centered:
             y_plot = (y - ly / 2) / 1e3
-            y_label = 'yc [km]'
+            y_label = r'$y_c$ [km]'
         else:
             y_plot = y / 1e3
-            y_label = 'y [km]'
+            y_label = r'$y$ [km]'
         
         fig, ax = plt.subplots(figsize=(7, 4.5))
         
@@ -574,10 +574,10 @@ def plot_wind_curl_profile(ly, tau0, save_path=None, centered=False, swap_axes=T
         
         if centered:
             y_plot = (y - ly / 2) / 1e3
-            y_label = 'yc [km]'
+            y_label = r'$y_c$ [km]'
         else:
             y_plot = y / 1e3
-            y_label = 'y [km]'
+            y_label = r'$y$ [km]'
         
         fig, ax = plt.subplots(figsize=(7, 4.5))
         
